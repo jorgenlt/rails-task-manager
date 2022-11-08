@@ -1,0 +1,22 @@
+<div class="container d-flex justify-content-start">
+  <div class="flex-column d-flex border mt-5 ml-5">
+    <h2 class="text-center mt-2">Tasks</h2>
+    <ul class="d-flex flex-column p-3">
+      <% @tasks.each do |task| %>
+        <div class="d-flex justify-content-start mt-2 mb-2">
+          <li class="">
+            <%= link_to "", task_path(task), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: 'fa-solid fa-trash' %>
+            <%= hidden_field_tag :completed, '' %>
+            <%= check_box_tag :completed, checked = true %>
+
+            <%= link_to task_path(task) do %>
+              <%= task.title %>
+            <% end %>
+
+          </li>
+        </div>
+      <% end %>
+    <%= link_to 'Create new task', tasks_new_path, class: 'btn btn-primary pb-2 mt-5', id: 'create-btn' %>
+    </ul>
+  </div>
+<div>

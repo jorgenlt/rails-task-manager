@@ -1,0 +1,14 @@
+<div class="container d-flex justify-content-start">
+  <div class="flex-column d-flex border mt-5 ml-5">
+    <div class="d-flex flex-column p-3 pt-1">
+      <h5 class="text-center mt-2"><%= @task.title %></h5>
+      <p><%= @task.details %></p>
+      <div>
+        <%= link_to 'Edit', edit_task_path, class: 'btn btn-primary pb-2 mt-1 mb-1', id: 'edit-btn' %>
+      </div>
+      <div>
+        <%= link_to 'Back to tasks', tasks_path %>
+      </div>
+    </div>
+  </div>
+</div>

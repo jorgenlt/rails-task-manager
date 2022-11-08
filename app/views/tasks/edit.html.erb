@@ -1,0 +1,30 @@
+<div class="container d-flex justify-content-start">
+  <div class="flex-column d-flex border mt-5 ml-5">
+    <div class="d-flex flex-column p-3 pt-1">
+      <h5 class="text-center mt-2">Edit task</h5>
+      <div class="form-group">
+        <%= form_with model: @task do |f| %>
+          <div class="mt-2">
+            <%= f.label :Completed? %>
+            <%= f.select :completed, [["True"], ["False"]], class: 'form-control' %>
+          </div>
+          <div class="mt-2">
+            <%= f.label :title %>
+            <%= f.text_field :title, class: 'form-control' %>
+          </div>
+          <div class="mt-2">
+            <%= f.label :details %>
+            <%= f.text_area :details, class: 'form-control', size: '30x10'  %>
+          </div>
+          <div class="mt-2">
+            <%= f.submit class: 'btn, btn-primary' %>
+          </div>
+        <% end %>
+      </div>
+        <div>
+          <%= link_to 'Back to tasks', tasks_path %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
